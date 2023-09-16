@@ -1,0 +1,39 @@
+
+{% include 'header.html' %}
+    <table class="table table-light">
+        <thead class="thead-light">
+            Profesores en el Sistema
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre profesor</th>
+                <th>Edad profesor</th>
+                <th>Materia</th>
+                <th>Años de experiencia</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Utilizamos Jinga para ver que informacion voy a recuperar-->
+            {% for  profesores in profesores  %}
+            <tr>
+                <!--Utiliza la informacion en forma de un vector-->
+                <td>{{profesores[0] }}</td>
+                <td>{{profesores[1] }}</td>
+                <td>{{profesores[2] }}</td>
+                <td>{{profesores[3] }}</td>
+                <td>{{profesores[4] }}</td>
+                <td> <!---->
+                    <a href="/edit/{{profesores[0]}}">Editar</a> <!---->
+                        |
+                    <!--Borra la informacion en base al cursor definido con Jinga y Python apoyandose en el destroy de python-->
+                    <a href="/destroy/{{profesores[0]}}">Eliminar</a> <!--Borra en base al ID-->
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% include 'footer.html' %}

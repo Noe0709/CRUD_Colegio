@@ -1,0 +1,39 @@
+
+{% include 'header.html' %}
+    <table class="table table-light">
+        <thead class="thead-light">
+            Cursos Disponibles para el Ciclo Actual
+            <tr>
+                <th>Codigo de Curso</th>
+                <th>Nombre del Curso</th>
+                <th>Nivel</th>
+                <th>Capacidad</th>
+                <th>Horario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Utilizamos Jinga para ver que informacion voy a recuperar-->
+            {% for  cursos in cursos  %}
+            <tr>
+                <!--Utiliza la informacion en forma de un vector-->
+                <td>{{cursos[0] }}</td>
+                <td>{{cursos[1] }}</td>
+                <td>{{cursos[2] }}</td>
+                <td>{{cursos[3] }}</td>
+                <td>{{cursos[4] }}</td>
+                <td> <!---->
+                    <a href="/editcursos/{{cursos[0]}}">Editar</a> <!---->
+                        |
+                    <!--Borra la informacion en base al cursor definido con Jinga y Python apoyandose en el destroy de python-->
+                    <a href="/destroycursos/{{cursos[0]}}">Eliminar</a> <!--Borra en base al ID-->
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% include 'footer.html' %}

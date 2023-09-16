@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+Formulario para editar
+{% for profesores in profesores %}
+    <form method="post" action="/update" enctype="multipart/form-data"> <!--todo lo que se escribe en el form se guarda en la ruta store-->
+        Id profesor:
+        <!--Cambiamos el valor de jinga por un tipo "value" en HTML que tenga esos valores vectorizados-->
+        <input type="text" value="{{ profesores[0] }}" name="id_profesor" id="id_profesor" readonly>
+        <br>
+
+        Nombre profesor:
+        <input type="text" value="{{ profesores[1] }}" name="nombre_p" id="nombre_p">
+        <br>
+    
+        Edad profesor:
+        <input type="text" value="{{ profesores[2] }}" name="edad_p" id="edad_p">
+        <br>
+    
+        Materia:
+        <input type="text" value="{{ profesores[3] }}" name="materia" id="materia">
+        <br>
+    
+        Años experiencia:
+        <input type="text" value="{{ profesores[4] }}" name="años_experiencia" id="años_experiencia">
+        <br>
+        <br>
+        <input type="submit" value="Editar">
+    
+    </form>
+
+
+
+
+{% endfor %}
+
+{% include 'footer.html' %}

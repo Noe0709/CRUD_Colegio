@@ -1,0 +1,34 @@
+{% include 'header.html' %}
+<!--Formulario encargado de solicitar informacion al usuario
+
+enviar mediante post-->
+<div class="card" style="width: 40%;">
+    <div class="card-body">
+
+        <form method="post" action="/store" enctype="multipart/form-data">
+            <!--todo lo que se escribe en el form se guarda en la ruta store-->
+            <input type="text" name="id_profesor" id="id_profesor" >
+            <br>
+
+            Nombre profesor:
+            <input type="text" name="nombre_p" id="nombre_p" >
+            <br>
+
+            Edad profesor:
+            <input type="text" name="edad_p" id="edad_p">
+            <br>
+
+            Materia:
+            <input type="text" name="materia" id="materia">
+            <br>
+
+            Años experiencia:
+            <input type="text" name="años_experiencia" id="años_experiencia">
+            <br>
+            <br>
+            <input type="submit" class="btn btn-primary" value="Agregar">
+
+        </form>
+    </div>
+</div>
+{% include 'footer.html' %}

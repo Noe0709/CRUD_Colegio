@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+Formulario para editar
+{% for estudiantes in estudiantes %}
+    <form method="post" action="/updateEstudiante" enctype="multipart/form-data"> <!--todo lo que se escribe en el form se guarda en la ruta store-->
+        Id Estudiante:
+        <!--Cambiamos el valor de jinga por un tipo "value" en HTML que tenga esos valores vectorizados-->
+        <input type="text" value="{{ estudiantes[0] }}" name="id_estudiante" id="id_estudiante" readonly>
+        <br>
+
+        Nombre Estudiante:
+        <input type="text" value="{{ estudiantes[1] }}" name="nombre_e" id="nombre_e">
+        <br>
+    
+        Edad Estudiante:
+        <input type="text" value="{{ estudiantes[2] }}" name="Edadestudiante" id="Edadestudiante">
+        <br>
+    
+        Grado:
+        <input type="text" value="{{ estudiantes[3] }}" name="Grado" id="Grado">
+        <br>
+    
+        Promedio:
+        <input type="text" value="{{ estudiantes[4] }}" name="Promedio" id="Promedio">
+        <br>
+        <br>
+        <input type="submit" value="Editar">
+    
+    </form>
+
+
+
+
+{% endfor %}
+
+{% include 'footer.html' %}
